@@ -13,6 +13,7 @@ machine:
         - cd ./domains/slack-bot.kamilantropik.pl/public_nodejs
         - git checkout --force master
         - git pull
+        - npm install
         - devil www restart slack-bot.kamilantropik.pl
 test:
   override:
