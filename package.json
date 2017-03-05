@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "botkit": "^0.5.1",
+    "express": "^4.15.0"
+  }
+}
