@@ -4,17 +4,17 @@ machine:
       environment:
         YARN_VERSION: 0.19.1
         PATH: "${PATH}:${HOME}/.yarn/bin"
-  deployment: 
-    production:
-      branch: master
-      commands: 
-        - ssh -v daniel13a@s9.mydevil.net
-        - echo '1. update resources'
-        - cd ./domains/slack-bot.kamilantropik.pl/public_nodejs
-        - git checkout --force master
-        - git pull
-        - npm install
-        - devil www restart slack-bot.kamilantropik.pl
+deployment: 
+  production:
+    branch: master
+    commands: 
+      - ssh -v daniel13a@s9.mydevil.net
+      - echo '1. update resources'
+      - cd ./domains/slack-bot.kamilantropik.pl/public_nodejs
+      - git checkout --force master
+      - git pull
+      - npm install
+      - devil www restart slack-bot.kamilantropik.pl
 test:
   override:
     - echo "No tests"
