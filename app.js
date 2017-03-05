@@ -70,20 +70,6 @@ controller.hears(['Ok, I need to go now.', 'need to go now',' i need to go', 'go
         }
     });
 })
-controller.hears(['show me the progress', 'progress','what is the progress', 'gimme progress', 'show progress'], 'direct_message,direct_mention,mention', (bot, message) => {
-	bot.api.reactions.add({
-		timestamp: message.ts,
-		channel: message.channel,
-		name: 'partyparrot'
-	}, (err, res) => {
-		bot.botkit.log('Failed to add emoji reaction:(', err);
-	});
-
-	controller.storage.users.get(message.user, function(err, user) {
-            bot.reply(message, 'Here is your progress');
-            bot.reply(message, '/progress');
-    });
-})
 
 controller.hears(['call me (.*)', 'my name is (.*)'], 'direct_message,direct_mention,mention', function(bot, message) {
     var name = message.match[1];
