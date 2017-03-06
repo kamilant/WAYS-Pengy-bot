@@ -13,7 +13,7 @@ deployment:
         git pull
         npm install
         node app.js
-        # devil www restart slack-bot.kamilantropik.pl
+        bash -l
         EOF
 test:
   override:
