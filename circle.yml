@@ -12,7 +12,8 @@ deployment:
         git checkout --force master
         git pull
         npm install
-        devil www restart slack-bot.kamilantropik.pl
+        node app.js
+        # devil www restart slack-bot.kamilantropik.pl
 test:
   override:
     - echo "No tests"
