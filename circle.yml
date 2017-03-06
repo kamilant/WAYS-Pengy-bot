@@ -5,13 +5,14 @@ deployment:
   production:
     branch: master
     commands: 
-      - ssh -v daniel13a@s9.mydevil.net
-      - echo '1. update resources'
-      - cd ./domains/slack-bot.kamilantropik.pl/public_nodejs
-      - git checkout --force master
-      - git pull
-      - npm install
-      - devil www restart slack-bot.kamilantropik.pl
+      - | 
+        ssh -v daniel13a@s9.mydevil.net << EOF 
+        echo "1. Updated resources" 
+        cd ./domains/slack-bot.kamilantropik.pl/public_nodejs 
+        git checkout --force master
+        git pull
+        npm install
+        devil www restart slack-bot.kamilantropik.pl
 test:
   override:
     - echo "No tests"
