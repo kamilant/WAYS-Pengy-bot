@@ -1,4 +1,9 @@
-if (!process.env.SLACKBOT_TOKEN) {
+ var express = require("express");
+ var app = express();
+
+ /* serves main page */
+ app.get("/", function(req, res) {
+    if (!process.env.SLACKBOT_TOKEN) {
     console.log('Error: Specify token in environment');
     process.exit(1);
 }
@@ -212,3 +217,9 @@ function formatUptime(uptime) {
     uptime = uptime + ' ' + unit;
     return uptime;
 }
+ });
+
+ var port = process.env.PORT || 5000;
+ app.listen(port, function() {
+   console.log("Listening on " + port);
+ });
