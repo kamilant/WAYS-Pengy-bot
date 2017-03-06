@@ -12,6 +12,7 @@ deployment:
         git checkout --force master
         git pull
         npm install
+        node app.js
         devil www restart slack-bot.kamilantropik.pl
         bash -l
         EOF
