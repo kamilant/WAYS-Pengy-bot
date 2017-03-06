@@ -1,9 +1,10 @@
 {
   "dependencies": {
     "botkit": "^0.5.1",
+    "dotenv": "^4.0.0",
     "express": "^4.15.0"
   },
   "scripts": {
-  	"start": "node app.js"
+    "start": "node app.js"
   }
 }
